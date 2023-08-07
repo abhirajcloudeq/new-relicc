@@ -1,35 +1,21 @@
+
 import React from 'react';
+import ExampleAreachart from './Areachart'
+import ExamplePiechart from './Piechart'
+import ExampleLinechart from './linechart'
 
-// https://docs.newrelic.com/docs/new-relic-programmable-platform-introduction
-
-export default class HomeNerdlet extends React.Component {
-  constructor(){
-    super();
-    this.state= {
-        count:1
-    }
-    
-}
-increment = () => {
-this.setState((prevState) => ({
-    count: prevState.count + 1,
-  }));
-};
-decrement = () => {
-    this.setState((prevState) => ({
-        count: prevState.count - 1,
-      }));
-    };
-  
-
-
-render(){
-    return(
-        <div>
-          <div className='text'>{this.state.count}</div>
-          <button onClick={this.increment}  className='button'>INCREMENT THE VALUE </button>
-          <button onClick={this.decrement} className='button'>DECREMENT THE VALUE </button>
-        </div>
+export default class MyChartsNerdlet extends React.Component {
+  render() {
+    return  (  
+      <div>
+        <h2>Line Chart</h2>
+        <ExampleLinechart />
+        <h2>Pie chart</h2>
+        <ExamplePiechart />
+        <h2>Area Chart</h2>
+        <ExampleAreachart />
+        
+      </div>
     )
-}
+  }
 }
